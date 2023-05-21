@@ -81,6 +81,7 @@ console.log("team", team, req.user.id, req.user._id)
         { upsert: true })
       
       
+        
       res.redirect("/team")
     } catch (err) {
       console.log(err);
