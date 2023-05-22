@@ -1,9 +1,45 @@
 <%- include('partials/header') -%>
-<div class="container profContainer">
-  <div class="row mt-5">
-    <div class="col-6">
+  <div class="container profContainer">
+    <div class="row mt-5">
+      <div class="col-6">
+
+        <!-- Profile Box -->
+
+        <div class="">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card p-0">
+                <div class="card-image">
+                  <img src="/imgs/IMG_8714-2.JPG" alt="">
+                </div>
+                <div class="card-content d-flex flex-column align-items-center">
+                  <h4 class="pt-2"><p><strong>User Name</strong>:
+                    </p> <%= user.userName %></h4>
+                  <h5><p><strong>Role</strong>:
+                  </p><%= user.role %></h5>
+
+
+
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card p-0">
+
+                </div>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Profile Box -->
+
       <div>
-        <p><strong>User Name</strong>: <%= user.userName %></p>
+        <!-- <p><strong>User Name</strong>: -->
+        <!-- </p> -->
         <!-- <p><strong>Email</strong>: <%= user.email %></p> -->
         <a href="/logout" class="col-3 btn btn-primary profLogOut">Logout</a>
       </div>
@@ -12,7 +48,7 @@
         <form action="/post/createPost" enctype="multipart/form-data" method="POST">
           <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input  type="text" class="form-control" id="title" name="title">
+            <input type="text" class="form-control" id="title" name="title">
           </div>
           <div class="mb-3">
             <label for="caption" class="form-label">Description: </label>
@@ -40,7 +76,7 @@
             <option value="reggae">Reggae</option>
             <option value="latin">Latin</option>
             <option value="indie">Indie</option>
-          </select> 
+          </select>
           <select name="genre" class="select-box">
             <option value="">Select a genre</option>
             <option value="pop">Pop</option>
@@ -53,43 +89,46 @@
             <option value="reggae">Reggae</option>
             <option value="latin">Latin</option>
             <option value="indie">Indie</option>
-          </select>          
+          </select>
           <button type="submit" class="btn btn-primary genreButton" value="Upload">Submit</button>
         </form>
       </div>
     </div>
-    
+
     <div class="col-6">
       <h3>Submissions: </h3>
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) { %>
-        <li class="col-6 justify-content-between mt-5">
-          <a href="/post/<%= posts[i]._id %>">
-            <% if (posts[i].image) { %>
-            <img class="img-fluid" src="<%= posts[i].image %>">
-            <% } %>
-            <% if (posts[i].audio) { %>
-            <audio controls>
-              <source src="<%= posts[i].audio %>" type="audio/mp3">
-            </audio>
-            <!-- <% } else { %> -->
-            
-            <% } %>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id %>">
+              <% if (posts[i].image) { %>
+                <img class="img-fluid" src="<%= posts[i].image %>">
+                <% } %>
+                  <% if (posts[i].audio) { %>
+                    <audio controls>
+                      <source src="<%= posts[i].audio %>" type="audio/mp3">
+                    </audio>
+                    <!-- <% } else { %> -->
 
-            <!-- Collabs -->
-            <select name="collaborator" id="">
-              <% for(var j = 0; j < users.length; j++) {%>
-              <option value="<%= users[j].id %>"><%= users[j].userName %></option>
-              <% } %>
-            </select>
-          </a>
-        </li>
-        <% } %>
+                    <% } %>
+
+                      <!-- Collabs -->
+                      <select name="collaborator" id="" class="select-box">
+                        <% for(var j=0; j < users.length; j++) {%>
+                          <option value="">Select Collaborators</option>
+                          <option value="<%= users[j].id %>">
+                            <%= users[j].userName %>
+                          </option>
+                          <% } %>
+                      </select>
+            </a>
+          </li>
+          <% } %>
       </ul>
       <div class="row justify-content-center mt-5">
         <a class="btn btn-primary profReturnToFeed" href="/feed">Feed</a>
       </div>
     </div>
   </div>
-</div>
-<%- include('partials/footer') -%>
+  </div>
+  <%- include('partials/footer') -%>

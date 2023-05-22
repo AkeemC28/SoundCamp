@@ -1,18 +1,23 @@
 <%- include('partials/header') -%>
 
+<body class="teamBody">
+    
+
+<h1>Team</h1>
+<h3>Build your team and expand your community.</h3>
     <div class="row justify-content-center mt-5">
         <ul class="row list-unstyled">
             <% for(var i=0; i<members.length; i++) {%>
                 <li>
-                    <%= members[i].userName %>
-                    <%= members[i].role %>
+                    <h4>Name: <%= members[i].userName %></h4>
+                    <h4>Role: <%= members[i].role %></h4>
                         <form action="/removeFromTeam?_method=PUT" method="POST">
                             <input name="member" value="<%= members[i].id %>" type="hidden">
-                            <button type="submit" id="">Remove From Team</button>
+                            <button class="removeTeamButton" type="submit" id="">Remove From Team</button>
                         </form>
                 </li>
                 <% } %>
         </ul>
     </div>
-
+</body>
     <%- include('partials/footer') -%>

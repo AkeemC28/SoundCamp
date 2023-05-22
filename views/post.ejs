@@ -15,7 +15,7 @@
 
     <!-- Collaborators -->
 
-<select name="editPost" id="editPostDropDown">
+<select class="select-box" name="editPost" id="editPostDropDown">
   <option class="status" value="To Do">To Do</option>
   <option class="status" value="In Progress">In Progress</option>
   <option class="status" value="Completed">Completed</option>
@@ -51,11 +51,13 @@
           
         <form class="col-1 likeBox" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
           <button class="btn btn-primary fa fa-heart heartButt" type="submit"></button>
-          <h4 class="col-3 likes"><span>Likes: <%= post.likes %></span></h4>
+          
         </form>
+
+        <h4 class="col-3 likes"><span>Likes: <%= post.likes %></span></h4>
         
         <%if(post.user==user.id){ %>
-          <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
+          <form action="/post/deletePost/<%= post._id %>?_method=DELETE" method="POST" class="col-3">
             <button class="btn btn-primary fa fa-trash trashButt" type="submit"><i class="ph ph-trash"></i></button>
           </form>
         <% } %>
@@ -70,7 +72,7 @@
         <div class="col-lg-3 ml-auto collabBox">
           <div class="featured-user  mb-5 mb-lg-0">
             <h3 class="mb-4">Collaborators</h3>
-            <ul class="list-unstyled">
+            <!-- <ul class="list-unstyled">
               <li>
                 <span href="#" class="d-flex align-items-center">
                   
@@ -101,28 +103,28 @@
               <li>
                 <span href="#" class="d-flex align-items-center">
                   <!-- <img src="" alt="Image" class="img-fluid mr-2"> -->
-                  <div class="podcaster">
+                  <!-- <div class="podcaster">
                     <span class="d-block">Garry Smith</span>
                     <span class="small"></span>
                   </div>
                 </span>
               </li>
               <li>
-                <span href="#" class="d-flex align-items-center">
+                <span href="#" class="d-flex align-items-center"> -->
                   <!-- <img src="" alt="Image" class="img-fluid mr-2"> -->
-                  <div class="podcaster">
+                  <!-- <div class="podcaster">
                     <span class="d-block">Gerson Stack</span>
                     <span class="small"></span>
                   </div>
                 </span>
               </li>
               <li>
-                <span href="#" class="d-flex align-items-center">
+                <span href="#" class="d-flex align-items-center"> -->
                   <!-- <img src="" alt="Image" class="img-fluid mr-2"> -->
-                  <div class="podcaster">
+                  <!-- <div class="podcaster">
                     <span class="d-block">Jenna Stone</span>
                     <span class="small"></span>
-                  </div>
+                  </div> -->
                 </span>
               </li>
             </ul>
@@ -163,7 +165,7 @@
     </div>
   </div>
    
-  <div class="col-6 mt-5">
+  <div class="col-6 mt-5 bottomButtons">
     <a class="btn btn-primary postButton" href="/profile">Return to Profile</a>
     <a class="btn btn-primary postButton" href="/feed">Return to Feed</a>
   </div>
