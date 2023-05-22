@@ -1,3 +1,7 @@
+Overview
+
+Sound Camp: Empowering music professionals with the premier backup and collaboration app. Share, track, and create with ease.
+
 # Install
 
 `npm install`
