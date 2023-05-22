@@ -122,6 +122,7 @@ module.exports = {
       if (image) {
         imageResult = await cloudinary.uploader.upload(image[0].path);
       }
+      console.log(imageResult)
       const audioResult = await cloudinary.uploader.upload(audio[0].path, {
         resource_type: "video",
       });
@@ -134,6 +135,8 @@ module.exports = {
         title: req.body.title,
         image: imageResult?.secure_url,
         audio: audioResult.secure_url,
+        imageId: imageResult?.public_id,
+        audioId: audioResult.public_id,
         genre: req.body.genre,
         caption: req.body.caption,
         likes: 0,
@@ -192,10 +195,16 @@ module.exports = {
     try {
       // Find post by id
       let post = await Post.findById(req.params.id);
+      console.log(post)
       // Delete image from cloudinary
-      await cloudinary.uploader.destroy(post.cloudinaryId);
-      // Delete post from db
-      await Post.findByIdAndRemove(req.params.id);
+      if(post.imageId){
+        await cloudinary.uploader.destroy(post.imageId)
+      }
+      
+      await cloudinary.uploader.destroy(post.audioId);
+      
+      const result = await Post.findByIdAndRemove(req.params.id);
+      // console.log(result)
       console.log(req.params.id);
       res.redirect("/profile");
     } catch (err) {
