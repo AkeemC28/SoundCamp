@@ -1,0 +1,891 @@
+/* Index CSS */
+
+.casio {
+  display: block;
+  width: 960px;
+  height: 260px;
+  margin: 100px auto 0 auto;
+  /* margin: calc(50vh - 150px) auto 0 auto; */
+  border-radius: 4px;
+  background-color: #efefe7;
+  background-image: linear-gradient(90deg, #efefe7, #f4f3ee);
+  position: relative;
+  box-shadow: 0 -2px 2px -0.5px #d0ccc1 inset, 2px 0 2px -0.5px #e1dfe0 inset,
+    0 3px 1px #fbfaf8 inset, 0 45px 10px -25px rgba(0, 0, 0, 0.1),
+    0 65px 50px -10px rgba(0, 0, 0, 0.05);
+}
+
+.speaker {
+  display: block;
+  width: 180px;
+  height: 200px;
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  border-radius: 0.5px;
+  background-color: #d6c6a2;
+  background-image: linear-gradient(transparent 40%, #efefe7 60%),
+    linear-gradient(90deg, #bfa58d, transparent 2% 96%, #c9b59a),
+    linear-gradient(#d1bba3 20%, transparent 65%),
+    linear-gradient(90deg, #d6c6a2, #e2d9ca),
+    linear-gradient(90deg, #d6c6a2, #e2d9ca),
+    radial-gradient(#897866 60%, transparent 61%);
+  background-size: 100% 8px, 100% 100%, 100% 8px, 6px 100%, 6px 100%,
+    190px 190px;
+  background-repeat: repeat, no-repeat, repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 0, 0 0, 50px 0, 120px 0, -7px 7px;
+}
+
+.controls {
+  display: block;
+  width: 745px;
+  height: 80px;
+  background-color: transparent;
+  position: absolute;
+  top: 7px;
+  right: 15px;
+  box-shadow: 0 2px 0.75px -0.8px #543f44 inset,
+    0 -2.5px 0.75px -0.8px #543f44 inset;
+}
+
+.controls-labels {
+  display: block;
+  width: 745px;
+  height: 30px;
+  font-family: sans-serif;
+  color: #4f4949;
+}
+
+.controls-labels p {
+  font-size: 0.5rem;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  border: 1px solid #7a7174;
+  padding: 0px 8px;
+  border-radius: 2px;
+  position: absolute;
+  top: 4px;
+}
+
+.controls-labels p:nth-child(1) {
+  left: 55px;
+}
+
+.controls-labels p:nth-child(2) {
+  left: 130px;
+  padding: 0 15px;
+}
+
+.controls-labels p:nth-child(3) {
+  left: 265px;
+  padding: 0 15px;
+}
+
+.controls-labels p:nth-child(4) {
+  left: 400px;
+}
+
+.controls-labels p:nth-child(5) {
+  left: 645px;
+  padding: 0 11px;
+}
+
+.controls-bar {
+  display: block;
+  width: 745px;
+  height: 30px;
+  position: absolute;
+  top: 30px;
+  background-image: linear-gradient(
+      90deg,
+      transparent 0% 2.5%,
+      #dcdcd0 2.5% 5%,
+      transparent 5% 7.5%,
+      #e1dfd3 7.5% 10%,
+      transparent 10% 12.5%,
+      #d5d5cd 12.5% 15%,
+      transparent 15% 17.5%,
+      #dcdcd0 17.5% 20%,
+      transparent 20% 22.5%,
+      #e1dfd3 22.5% 25%,
+      transparent 25% 27.5%,
+      #d5d5cd 27.5% 30%,
+      transparent 30% 32.5%,
+      #dcdcd0 32.5% 35%,
+      transparent 35% 37.5%,
+      #e1dfd3 37.5% 40%,
+      transparent 40% 42.5%,
+      #d5d5cd 42.5% 45%,
+      transparent 45% 47.5%,
+      #dcdcd0 47.5% 50%,
+      transparent 50% 52.5%,
+      #e1dfd3 52.5% 55%,
+      transparent 55% 57.5%,
+      #d5d5cd 57.5% 60%,
+      transparent 60% 62.5%,
+      #dcdcd0 62.5% 65%,
+      transparent 65% 67.5%,
+      #e1dfd3 67.5% 70%,
+      transparent 70% 72.5%,
+      #d5d5cd 72.5% 75%,
+      transparent 75% 77.5%,
+      #dcdcd0 77.5% 80%,
+      transparent 80% 82.5%,
+      #e1dfd3 82.5% 85%,
+      transparent 85% 87.5%,
+      #d5d5cd 87.5% 90%,
+      transparent 90% 92.5%,
+      #dcdcd0 92.5% 95%,
+      transparent 95% 97.5%,
+      #e1dfd3 97.5% 100%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0% 7%,
+      #dcdcd0 7% 14%,
+      transparent 14% 21%,
+      #e1dfd3 21% 28%,
+      transparent 28% 35%,
+      #d5d5cd 35% 42%,
+      transparent 42% 49%,
+      #dcdcd0 49% 56%,
+      transparent 56% 63%,
+      #e1dfd3 63% 70%,
+      transparent 70% 77%,
+      #d5d5cd 77% 84%,
+      transparent 84% 91%,
+      #dcdcd0 91% 98%,
+      transparent 98%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0% 2.5%,
+      #e0ded1 2.5% 5%,
+      transparent 5% 7.5%,
+      #dddbce 7.5% 10%,
+      transparent 10% 12.5%,
+      #dedccf 12.5% 15%,
+      transparent 15% 17.5%,
+      #e0ded1 17.5% 20%,
+      transparent 20% 22.5%,
+      #e1dfd3 22.5% 25%,
+      transparent 25% 27.5%,
+      #dddbce 27.5% 30%,
+      transparent 30% 32.5%,
+      #dedccf 32.5% 35%,
+      transparent 35% 37.5%,
+      #e0ded1 37.5% 40%,
+      transparent 40% 42.5%,
+      #d5d5cd 42.5% 45%,
+      transparent 45% 47.5%,
+      #dddbce 47.5% 50%,
+      transparent 50% 52.5%,
+      #e4e2d6 52.5% 55%,
+      transparent 55% 57.5%,
+      #e0ded1 57.5% 60%,
+      transparent 60% 62.5%,
+      #dcdcd0 62.5% 65%,
+      transparent 65% 67.5%,
+      #dddbce 67.5% 70%,
+      transparent 70% 72.5%,
+      #dedccf 72.5% 75%,
+      transparent 75% 77.5%,
+      #e0ded1 77.5% 80%,
+      transparent 80% 82.5%,
+      #e1dfd3 82.5% 85%,
+      transparent 85% 87.5%,
+      #e4e2d6 87.5% 90%,
+      transparent 90% 92.5%,
+      #e0ded1 92.5% 95%,
+      transparent 95% 97.5%,
+      #e1dfd3 97.5% 100%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0% 7%,
+      #cac8bc 7% 14%,
+      transparent 14% 21%,
+      #dbd9cd 21% 28%,
+      transparent 28% 35%,
+      #d0cec2 35% 42%,
+      transparent 42% 49%,
+      #cac8bc 49% 56%,
+      transparent 56% 63%,
+      #dbd9cd 63% 70%,
+      transparent 70% 77%,
+      #d0cec2 77% 84%,
+      transparent 84% 91%,
+      #cac8bc 91% 98%,
+      transparent 98%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0% 2.5%,
+      #e0ded1 2.5% 5%,
+      transparent 5% 7.5%,
+      #dddbce 7.5% 10%,
+      transparent 10% 12.5%,
+      #dedccf 12.5% 15%,
+      transparent 15% 17.5%,
+      #e0ded1 17.5% 20%,
+      transparent 20% 22.5%,
+      #e1dfd3 22.5% 25%,
+      transparent 25% 27.5%,
+      #dddbce 27.5% 30%,
+      transparent 30% 32.5%,
+      #dedccf 32.5% 35%,
+      transparent 35% 37.5%,
+      #e0ded1 37.5% 40%,
+      transparent 40% 42.5%,
+      #d5d5cd 42.5% 45%,
+      transparent 45% 47.5%,
+      #dddbce 47.5% 50%,
+      transparent 50% 52.5%,
+      #e4e2d6 52.5% 55%,
+      transparent 55% 57.5%,
+      #e0ded1 57.5% 60%,
+      transparent 60% 62.5%,
+      #dcdcd0 62.5% 65%,
+      transparent 65% 67.5%,
+      #dddbce 67.5% 70%,
+      transparent 70% 72.5%,
+      #dedccf 72.5% 75%,
+      transparent 75% 77.5%,
+      #e0ded1 77.5% 80%,
+      transparent 80% 82.5%,
+      #e1dfd3 82.5% 85%,
+      transparent 85% 87.5%,
+      #d5d5cd 87.5% 90%,
+      transparent 90% 92.5%,
+      #dcdcd0 92.5% 95%,
+      transparent 95% 97.5%,
+      #e1dfd3 97.5% 100%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0% 2.5%,
+      #dcdcd0 2.5% 5%,
+      transparent 5% 7.5%,
+      #e1dfd3 7.5% 10%,
+      transparent 10% 12.5%,
+      #d5d5cd 12.5% 15%,
+      transparent 15% 17.5%,
+      #dcdcd0 17.5% 20%,
+      transparent 20% 22.5%,
+      #e1dfd3 22.5% 25%,
+      transparent 25% 27.5%,
+      #d5d5cd 27.5% 30%,
+      transparent 30% 32.5%,
+      #dcdcd0 32.5% 35%,
+      transparent 35% 37.5%,
+      #e1dfd3 37.5% 40%,
+      transparent 40% 42.5%,
+      #d5d5cd 42.5% 45%,
+      transparent 45% 47.5%,
+      #dcdcd0 47.5% 50%,
+      transparent 50% 52.5%,
+      #e1dfd3 52.5% 55%,
+      transparent 55% 57.5%,
+      #d5d5cd 57.5% 60%,
+      transparent 60% 62.5%,
+      #dcdcd0 62.5% 65%,
+      transparent 65% 67.5%,
+      #dddbce 67.5% 70%,
+      transparent 70% 72.5%,
+      #dedccf 72.5% 75%,
+      transparent 75% 77.5%,
+      #e0ded1 77.5% 80%,
+      transparent 80% 82.5%,
+      #e1dfd3 82.5% 85%,
+      transparent 85% 87.5%,
+      #e4e2d6 87.5% 90%,
+      transparent 90% 92.5%,
+      #e0ded1 92.5% 95%,
+      transparent 95% 97.5%,
+      #e1dfd3 97.5% 100%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0% 7%,
+      #cac8bc 7% 14%,
+      transparent 14% 21%,
+      #dbd9cd 21% 28%,
+      transparent 28% 35%,
+      #d0cec2 35% 42%,
+      transparent 42% 49%,
+      #cac8bc 49% 56%,
+      transparent 56% 63%,
+      #dbd9cd 63% 70%,
+      transparent 70% 77%,
+      #d0cec2 77% 84%,
+      transparent 84% 91%,
+      #cac8bc 91% 98%,
+      transparent 98%
+    ),
+    linear-gradient(90deg, #f1eee7, #ede8e2, #ebe8e1);
+  background-size: 52px 20px, 16px 20px, 52px 20px, 16px 20px, 52px 20px,
+    52px 20px, 16px 20px, 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 1px 5px, 107px 5px, 203px 5px, 325px 5px, 537px 5px,
+    589px 5px, 730px 5px, top left;
+  box-shadow: 0 2px 1px -1px #c1beb5 inset, 0 -2px 1px -1px #fcfcfa inset,
+    1px 0 0.5px -0.5px #dfdfd7 inset, -2.5px 0 1px -1px #d4cdc5 inset;
+  border-radius: 1px;
+}
+
+.mode-container {
+  display: block;
+  width: 45px;
+  height: 20px;
+  border-radius: 2px;
+  background-image: linear-gradient(90deg, #e6e4d7, #eae7de);
+  position: absolute;
+  top: 5px;
+  left: 55px;
+  box-shadow: 0 4.5px 1px -2px #837363 inset, 4px 0 3px -2px #beb8a8 inset,
+    -3px 0 2px -2px #dbdbd3 inset, 0 -0.5px 1px #dbd8cf inset,
+    0 1px 0.5px -0.75px #fffcf5;
+}
+
+.mode-bar {
+  display: block;
+  width: 35px;
+  height: 8px;
+  background-color: black;
+  position: absolute;
+  left: 5px;
+  top: 7px;
+  background-image: linear-gradient(#1e1e23 45%, #3d3d3d 55%);
+  border-radius: 1px;
+  box-shadow: 0 -0.5px 0.5px 0 #d6dbde, 0 0 1px 0.5px #f7f4ed,
+    0 -1.25px 2px -1px #2a2925 inset, 0 1.25px 2px -1px black inset;
+}
+
+.mode-handle {
+  display: block;
+  width: 14px;
+  height: 7px;
+  border-radius: 3px;
+  position: absolute;
+  top: 8px;
+  left: 7px;
+  background-image: radial-gradient(transparent 40%, #1a1c1d 70%),
+    linear-gradient(#23272a 60%, #484852 70%);
+  box-shadow: 0 1.5px 1px -1px #676b6e inset, 1px 3px 2px -2px #6b685f,
+    3px 5px 5px rgba(110, 106, 94, 0.3);
+}
+
+.volume-container {
+  display: block;
+  width: 65px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  left: 130px;
+  border-radius: 2px;
+  background-image: linear-gradient(90deg, #e5e0da, #f0eee1);
+  box-shadow: 0 1px 0.5px -0.75px #fffcf5, 0 3.5px 1.5px -1.5px #807060 inset,
+    0 -1.75px 2px -2px #ece9e0 inset, 3.5px 0 2px -2px #c7bfb2 inset,
+    -1.5px 0 0.5px -0.75px #dbd8d1 inset, 0 -0.5px 1px #d2d1cf;
+}
+
+.volume-bar {
+  display: block;
+  width: 55px;
+  height: 10px;
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  border-radius: 1px;
+  background-image: linear-gradient(#1d1e23 45%, #3f3d40 55%);
+}
+
+.volume-handle {
+  display: block;
+  width: 19px;
+  height: 19px;
+  border-radius: 2px;
+  position: absolute;
+  left: 14px;
+  top: 1px;
+  background-color: #6a6964;
+  background-image: radial-gradient(#262626 50%, #3e3d39 80%),
+    radial-gradient(#353537, #3e3e40 80%, #323031 90%),
+    linear-gradient(#4c4942, #676860 10% 25%, #282c2c 30% 70%, #777370 75%),
+    linear-gradient(#4c4942, #676860 10% 25%, #282c2c 30% 70%, #777370 75%);
+  background-size: 17px 4px, 15px 15px, 3px 20px, 3px 20px;
+  background-repeat: no-repeat;
+  background-position: bottom left, 2px 0, top right, top left;
+  box-shadow: 0 1.5px 0.75px -0.5px #454442 inset,
+    0 2px 1px -0.5px #797876 inset, -0.5px 0 0.5px rgba(30, 32, 36, 0.5) inset,
+    5px 0 6px -2px rgba(24, 23, 28, 0.3), 0 5px 4px rgba(76, 74, 72, 0.3),
+    0 6px 2px -3px rgba(76, 74, 72, 0.75);
+}
+
+.tone-container {
+  display: block;
+  width: 52px;
+  height: 20px;
+  position: absolute;
+  left: 265px;
+  top: 5px;
+  border-radius: 2px;
+  box-shadow: 0 3.5px 1.5px -1.5px #6b5e4b inset, 4px 0 3px -2px #a9a79b inset,
+    -3px 0 2px -2px #d1cab7 inset, 0 -0.5px 1px #dedcd0 inset,
+    0 1px 0.5px -0.75px #fffcf5;
+  background-image: linear-gradient(
+    90deg,
+    rgba(207, 202, 196, 0.5),
+    rgba(246, 243, 226, 0.5)
+  );
+}
+
+.tone-bar {
+  display: block;
+  width: 45px;
+  height: 9px;
+  position: absolute;
+  left: 3px;
+  top: 6px;
+  background-image: linear-gradient(#282c2d 25%, #3c3d3f 35%, #373739);
+  border-radius: 1px;
+  box-shadow: 0 0.5px 0.5px #f8f5ec, -1px 0 0.5px #cbc8c1, 1px 0 0.5px #e9ebdd,
+    0 -1px 0.5px #e2e2e2;
+}
+
+.tone-handle {
+  display: block;
+  position: absolute;
+  width: 19px;
+  height: 18px;
+  border-radius: 2px;
+  left: 5px;
+  top: 1px;
+  background-color: #6a6964;
+  background-image: radial-gradient(#272729, #22211c 60%, #5f5c55),
+    radial-gradient(#3e3f41, #363638 80%, #272729 90%),
+    linear-gradient(#4c4942, #676860 10% 25%, #282c2c 30% 70%, #777370 75%),
+    linear-gradient(#4f4a46, #65645f);
+  background-size: 18px 4px, 15px 15px, 2px 20px, 3px 20px;
+  background-repeat: no-repeat;
+  background-position: bottom left, 2.25px 0, top right, top left;
+  box-shadow: 0 1.5px 0.75px -0.5px #494846 inset,
+    0 2.5px 1px -0.75px #313131 inset, -0.75px 0 0.5px -0.25px #454545 inset,
+    0.5px 0 0.5px #3d3a35 inset, 0 5px 4px 1px rgba(76, 74, 72, 0.4),
+    0 6px 2px -3px rgba(76, 74, 72, 0.7);
+}
+
+.btn {
+  display: block;
+  width: 9px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  border-radius: 1px;
+}
+
+.clear.btn {
+  left: 350px;
+  background-color: #7c99db;
+  box-shadow: 0 -1px 1px -0.5px #2f3b43 inset, 0 -2px 0.5px -0.5px #474d67 inset,
+    0 0 1px 1.25px #93a6d1 inset, 0 0 1px 0.5px #889fbf inset,
+    0 3px 3px -1px #59524c, 0 4px 4px -1px #9d998e, -0.5px 0 0.5px #707e9a,
+    0 2px 4px #d6d4c5;
+}
+
+.del.btn {
+  left: 375px;
+  background-color: #eb8372;
+  box-shadow: 0.5px 0 0.5px #945c4e inset, 0 -1px 1px -0.5px #6a331e inset,
+    0 -2px 0.5px -0.5px #a65f50 inset, 0 0 1px 1.25px #d38671 inset,
+    0 0 1px 0.5px #ef8c7f inset, 0 3px 3px -1px #966c51, 0 4px 4px -1px #c9a99a,
+    -0.5px 0 0.5px #d5aea2, 0 2px 4px #dbbbb0;
+}
+
+.down.btn {
+  left: 400px;
+  background-color: #ee8273;
+  box-shadow: 0.5px 0 0.5px #c07c69 inset, 0 -1px 1px -0.5px #6a331e inset,
+    0 -2px 0.5px -0.5px #a65f50 inset, 0 0 1.25px 1px #ec8775 inset,
+    0 0 1px 0.5px #ef8c7f inset, 0 3px 3px -1px #966c51, 0 4px 4px -1px #c9a99a,
+    -0.5px 0 0.5px #d5aea2, 0 2px 4px #dbbbb0;
+}
+
+.up.btn {
+  left: 425px;
+  background-color: #eb8372;
+  box-shadow: 0.5px 0 0.5px #945c4e inset, 0 -1px 1px -0.5px #6a331e inset,
+    0 -2px 0.5px -0.5px #a65f50 inset, 0 0 1.25px 1px #d38671 inset,
+    0 0 1px 1px #ef8c7f inset, 0 3px 3px -1px #966c51, 0 4px 4px -1px #c9a99a,
+    -0.5px 0 0.5px #d5aea2, 0 2px 4px #dbbbb0;
+}
+
+.select.btn {
+  left: 450px;
+  background-color: #ee8273;
+  box-shadow: 0.5px 0 0.5px #945c4e inset, 0 -1px 1px -0.5px #6a331e inset,
+    0 -2px 0.5px -0.5px #a65f50 inset, 0 0 1.25px 1px #d38671 inset,
+    0 0 1px 1px #ef8c7f inset, 0 3px 3px -1px #966c51, 0 4px 4px -1px #c9a99a,
+    -0.5px 0 0.5px #d5aea2, 0 2px 4px #dbbbb0;
+}
+
+.reset.btn {
+  left: 475px;
+  background-color: #edaf5d;
+  box-shadow: 0.75px 0 0.5px #ae8059 inset, 0 -0.75px 0.5px #975a2b inset,
+    0 0 1px 1.5px #e3ac75 inset, 0 0 1px 3px #e6ae60 inset,
+    0 3px 3px -1px #966c51, 0 4px 4px -1px #c9a99a, 1px 0 3px #f8cd94,
+    -1px 0 5px -2px #d1a78e, 0 0 4px 1px #ead4b4;
+}
+
+.demo.btn {
+  left: 500px;
+  background-color: #8ed8c5;
+  box-shadow: 1.25px 0 0.5px #729883 inset, 0.5px 0 1px 2px #9ad4be inset,
+    -3px 0 4px -2px #b4bfaf, 0 3px 3px -1px #464f3e, 0 0 5px #d6e4da,
+    0 0 7px #d1d1c7;
+}
+
+.memory.btn {
+  left: 525px;
+  background-color: #92a5c3;
+  box-shadow: 0 -1px 1px -0.5px #2f3b43 inset, 0 -2px 0.5px -0.5px #474d67 inset,
+    0 0 1px 1.25px #93a6d1 inset, 0 0 1px 0.5px #889fbf inset,
+    0 3px 3px -1px #59524c, 0 4px 4px -1px #9d998e, -0.5px 0 0.5px #707e9a,
+    0 2px 4px #d6d4c5;
+}
+
+.bigbtn {
+  display: block;
+  width: 35px;
+  height: 20px;
+  background-color: red;
+  border-radius: 3px;
+  position: absolute;
+  top: 4px;
+  background-color: #759ade;
+}
+
+.bigbtn.onekey-1 {
+  right: 65px;
+
+  background-image: linear-gradient(
+    transparent 25%,
+
+    #405e94 28%,
+    #a4bff6 31%,
+    #8398d1 34%,
+
+    #405e94 37%,
+    #a4bff6 40%,
+    #8398d1 43%,
+
+    #405e94 46%,
+    #a4bff6 49%,
+    #8398d1 52%,
+
+    #405e94 55%,
+    #a4bff6 58%,
+    #8398d1 61%,
+
+    #405e94 64%,
+    #a4bff6 67%,
+    #8398d1 70%,
+
+    #405e94 73%,
+    #a4bff6 76%,
+    #8398d1 79%,
+
+    transparent 80%
+  );
+  box-shadow: 0 -0.5px 1px #15172c inset, 1.25px 0 0.5px -0.5px #3b3b47 inset,
+    2.5px 0 1px #65748b inset, 3.5px 0 1px #98aed3 inset,
+    0 1px 1px #d4e0fa inset, 0 -1.5px 1px #8da3d4 inset,
+    -0.5px 0 0.5px #9aaed1 inset, -0.75px 0.25px 0.5px #2c2c38,
+    -1.25px -0.1px 0.1px #edeef3, 0 5px 3px -2.5px #4f4b40,
+    0 3px 4px -1px #aca59d, 0 4px 5px #cfcbca;
+}
+
+.bigbtn.onekey-2 {
+  right: 20px;
+
+  background-image: linear-gradient(
+    transparent 25%,
+
+    #405e94 28%,
+    #a4bff6 31%,
+    #8398d1 34%,
+
+    #405e94 37%,
+    #a4bff6 40%,
+    #8398d1 43%,
+
+    #47659b 46%,
+    #a4bff6 49%,
+    #8398d1 52%,
+
+    #5871a7 55%,
+    #a4bff6 58%,
+    #8398d1 61%,
+
+    #405e94 64%,
+    #a4bff6 67%,
+    #8398d1 70%,
+
+    #5871a7 73%,
+    #a4bff6 76%,
+    #8398d1 79%,
+
+    transparent 80%
+  );
+  box-shadow: 0 -0.5px 1px #535e70 inset, 1.25px 0 0.5px -0.5px #3b3b47 inset,
+    2.5px 0 1px #65748b inset, 3.5px 0 1px #98aed3 inset,
+    0 1px 1px #d4e0fa inset, 0 -1.5px 1px #8da3d4 inset,
+    -0.5px 0 0.5px #9aaed1 inset, -0.75px 0.25px 0.5px #454f59,
+    -1.25px -0.1px 0.1px #edeef3, 0 5px 3px -2.5px #433e38,
+    0 3px 4px -1px #c0b9b1, 0 4px 5px #cfcbca;
+}
+
+.keys-container {
+  display: block;
+  width: 720px;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  right: 35px;
+  background-color: #e3dfda;
+  background-image: linear-gradient(90deg, #e3dfda, #dfdcd3);
+  border-radius: 0.5px;
+  box-shadow: 0 3px 1.25px -0.75px #282421 inset, 5px 0 2px #afa896 inset,
+    -2px 0 4px #9f9684 inset, -6px 0 2px #bfb3a5 inset, 0 -1.5px 1px 1px #f1f6ef;
+}
+
+.white {
+  width: 710px;
+  height: 135px;
+  background-color: #141312;
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  box-shadow: -1px 0 2px -1px rgba(40, 36, 33, 0.35),
+    3px 0 2px -1px rgba(40, 36, 33, 0.5), -2px 0 3px -2px #574e45,
+    0 8px 6px -3px #cbc8b9;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+    1fr 1fr;
+  grid-gap: 2px;
+}
+
+.white .key {
+  height: 133px;
+  background-color: #e9e7d8;
+  border-radius: 3px;
+  background-image: linear-gradient(#e9e7d8, #f4f2e3);
+  box-shadow: 1px 0 1px -0.5px #f6eddc inset,
+    -1.25px 0 0.5px -0.5px #9d9885 inset, 0 0 1px 2px #f7f5e8 inset,
+    0 10px 5px -5px rgba(34, 33, 28, 0.75),
+    0 10px 7px -3px rgba(40, 36, 33, 0.25);
+}
+
+.black {
+  display: grid;
+  width: 665px;
+  height: 72px;
+  position: absolute;
+  top: 2px;
+  left: 35px;
+  grid-template-columns: 21px 21px 21px 21px 21px 21px 21px 21px 21px 21px 21px 21px 21px 21px 21px 21px;
+  -ms-grid-columns: 21px 21px 21px 21px 21px 21px 21px 21px 21px 21px 21px 21px
+    21px 21px 21px 21px;
+  grid-gap: 21px;
+}
+
+.black .key {
+  background-color: #000;
+  background-image: linear-gradient(
+    #b5bdd2 15%,
+    #556478 17%,
+    #3c4759 30%,
+    #262e31 90%,
+    #192026 92%
+  );
+  box-shadow: 1px 0 1px #1d212d inset, 2px 0 1px #252d3a inset,
+    -2px 0 0.75px #252d3a inset, 0 -2px 0.5px #22252a inset,
+    0 -6px 0.5px #3b3f42 inset, 0 0 0.5px 1px #181913, 7px 7px 1px -5px #fafbf3,
+    -7.25px 7px 1px -5px #fafbf3;
+  border-radius: 1.5px;
+}
+
+.black .key:nth-child(1) {
+  background-image: linear-gradient(
+    #b5bdd2 4%,
+    #556478 7%,
+    #3c4759 50%,
+    #262e31 90%
+  );
+}
+
+.black .key:nth-child(4) {
+  background-image: linear-gradient(
+    176deg,
+    #b5bdd2 4%,
+    #556478 8%,
+    #3c4759 30%,
+    #262e31 90%,
+    #192026 92%
+  );
+}
+
+.black .key:nth-child(5) {
+  background-image: linear-gradient(
+    178deg,
+    #b5bdd2 2%,
+    #556478 3%,
+    #3c4759 30%,
+    #262e31 90%,
+    #192026 92%
+  );
+}
+
+.black .key:nth-child(7) {
+  background-image: linear-gradient(
+    #b5bdd2 12%,
+    #556478 15%,
+    #3c4759 30%,
+    #262e31 90%,
+    #192026 92%
+  );
+}
+
+.black .key:nth-child(8) {
+  background-image: linear-gradient(
+    182deg,
+    #b5bdd2 2%,
+    #556478 3% 10%,
+    #3c4759 30%,
+    #262e31 90%,
+    #192026 92%
+  );
+}
+
+.black .key:nth-child(9) {
+  background-image: linear-gradient(
+    #b5bdd2 7%,
+    #556478 10% 20%,
+    #3c4759 30%,
+    #262e31 90%,
+    #192026 92%
+  );
+}
+
+.black .key:nth-child(11) {
+  background-image: linear-gradient(
+    182deg,
+    #b5bdd2 7%,
+    #556478 10% 20%,
+    #3c4759 30%,
+    #262e31 90%,
+    #192026 92%
+  );
+}
+
+.black .key:nth-child(12) {
+  background-image: linear-gradient(
+    181deg,
+    #b5bdd2 5%,
+    #556478 8%,
+    #3c4759 30%,
+    #262e31 90%,
+    #192026 92%
+  );
+}
+
+.black .key:nth-child(14) {
+  background-image: linear-gradient(
+    #b5bdd2 2%,
+    #556478 8%,
+    #3c4759 30%,
+    #262e31 90%,
+    #192026 92%
+  );
+}
+
+.black .key:nth-child(15) {
+  background-image: linear-gradient(
+    175deg,
+    #b5bdd2 3%,
+    #556478 8% 15%,
+    #3c4759 30%,
+    #262e31 90%,
+    #192026 92%
+  );
+}
+
+.black .key:nth-child(16) {
+  background-image: linear-gradient(
+    179deg,
+    #b5bdd2 5%,
+    #556478 7%,
+    #3c4759 30%,
+    #262e31 90%,
+    #192026 92%
+  );
+}
+
+.logo {
+  position: absolute;
+  top: 225px;
+  left: 15px;
+  display: block;
+  width: 180px;
+}
+
+.logo h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.logo h1 span:first-child {
+  color: #6c4351;
+  text-shadow: 0 0 1px #c3a9b2, 0 0 2px #eedfe2;
+}
+
+.logo h1 span:last-child {
+  color: #ece8e5;
+  letter-spacing: 1px;
+  text-shadow: 0px 0.5px 0.75px #bcbbb7, 0.5px 0.5px 0.75px #bcbbb7,
+    0.5px 0px 0.75px #bcbbb7, 0.5px -0.5px 0.75px #bcbbb7,
+    0 -0.5px 0.75px #bcbbb7, -0.5px -0.5px 0.75px #bcbbb7,
+    -0.5px 0.5px 0.75px #bcbbb7, -0.5px 0 0.75px #bcbbb7;
+}
+
+.indexLogin {
+  background-color: #9d9480;
+  border: 2px solid #3b3730;
+  color: #000;
+  border-radius: 100px;
+  padding-top: 5px;
+  text-align: center;
+}
+.indexSignUp {
+  background-color: #9d9480;
+  border: 2px solid #3b3730;
+  color: #000;
+  border-radius: 100px;
+  padding-top: 5px;
+
+  text-align: center;
+}
+.loginSignUp {
+  justify-content: center;
+  height: 100px;
+}
+.row > * {
+  width: 200px;
+}
+
+/* Index CSS */

@@ -1,26 +1,26 @@
 <%- include('partials/header') -%>
-<div>
-  <form action="/post/search" method="get">
-    <input name="search" type="text">
-    <button type="submit">Search</button>
-  </form>
-  <form action="/post/search" method="get">
-    <button type="submit"> Clear Search</button>
+<div class="feedInput">
+  <form class="searchForm" action="/post/search" method="get">
+    <input class="search__input" name="search" type="text">
+    <button class="searchButton" type="submit">Search</button>
+    <!-- <form action="/post/search" method="get"> -->
+      <button class="clearSearchButton" type="submit"> Clear Search</button>
+    <!-- </form> -->
   </form>
 </div>
   <div class="container">
     <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <%= posts[i].title %>
+          <li class="col-6 justify-content-between mt-5 feedBox">
+            <h3><span><%= posts[i].userName %></span></h3>
+            <h4>Title: <%= posts[i].title %></h4>
             <a href="/post/<%= posts[i]._id%>">
               <img class="img-fluid" src="<%= posts[i].image%>">
             </a>
-            <%= posts[i].title %>
-            <form action="/addToTeam?_method=PUT" method="POST">
+            <form class="feedFormMargin" action="/addToTeam?_method=PUT" method="POST">
               <input name= "memberId" value= "<%= posts[i].user %>" type="hidden">
-            <button type="submit" id="">Add To Team</button>
+            <button class="addToTeamButton" type="submit" id="">Add To Team</button>
           </form>
           </li>
         <% } %>

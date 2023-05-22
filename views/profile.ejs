@@ -1,32 +1,34 @@
 <%- include('partials/header') -%>
-<div class="container">
+<div class="container profContainer">
   <div class="row mt-5">
     <div class="col-6">
       <div>
         <p><strong>User Name</strong>: <%= user.userName %></p>
-        <p><strong>Email</strong>: <%= user.email %></p>
-        <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+        <!-- <p><strong>Email</strong>: <%= user.email %></p> -->
+        <a href="/logout" class="col-3 btn btn-primary profLogOut">Logout</a>
       </div>
       <div class="mt-5">
-        <h2>Add a post</h2>
+        <h2>Add A Project</h2>
         <form action="/post/createPost" enctype="multipart/form-data" method="POST">
           <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="title">
+            <input  type="text" class="form-control" id="title" name="title">
           </div>
           <div class="mb-3">
-            <label for="caption" class="form-label">Caption</label>
+            <label for="caption" class="form-label">Description: </label>
             <textarea class="form-control" id="caption" name="caption"></textarea>
           </div>
+
           <div class="mb-3">
-            <label for="image">Image File:</label>
-            <input type="file" id="image" name="image">
+            <h3><label for="image">Image File:</label></h3>
+            <input class="profInputs" type="file" id="image" name="image">
           </div>
           <div class="mb-3">
-            <label for="audio">Audio File:</label>
-            <input type="file" id="audio" name="audio" accept="audio/*">
+            <h3><label for="audio">Audio File:</label></h3>
+            <input class="profInputs" type="file" id="audio" name="audio" accept="audio/*">
           </div>
-          <select name="genre">
+          <h3>Choose Your Genre:</h3>
+          <select name="genre" class="select-box">
             <option value="">Select a genre</option>
             <option value="pop">Pop</option>
             <option value="rock">Rock</option>
@@ -39,7 +41,7 @@
             <option value="latin">Latin</option>
             <option value="indie">Indie</option>
           </select> 
-          <select name="genre">
+          <select name="genre" class="select-box">
             <option value="">Select a genre</option>
             <option value="pop">Pop</option>
             <option value="rock">Rock</option>
@@ -52,12 +54,13 @@
             <option value="latin">Latin</option>
             <option value="indie">Indie</option>
           </select>          
-          <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+          <button type="submit" class="btn btn-primary genreButton" value="Upload">Submit</button>
         </form>
       </div>
     </div>
     
     <div class="col-6">
+      <h3>Submissions: </h3>
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) { %>
         <li class="col-6 justify-content-between mt-5">
@@ -84,7 +87,7 @@
         <% } %>
       </ul>
       <div class="row justify-content-center mt-5">
-        <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        <a class="btn btn-primary profReturnToFeed" href="/feed">Feed</a>
       </div>
     </div>
   </div>

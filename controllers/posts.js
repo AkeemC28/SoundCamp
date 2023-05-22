@@ -14,6 +14,33 @@ module.exports = {
       console.log(err);
     }
   },
+  getHome: async (req, res) => {
+    try {
+      const posts = await Post.find({ user: req.user.id });
+      const users = await User.find({});
+      res.render("home.ejs", { posts: posts, user: req.user, users: users });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getAbout: async (req, res) => {
+    try {
+      const posts = await Post.find({ user: req.user.id });
+      const users = await User.find({});
+      res.render("about.ejs", { posts: posts, user: req.user, users: users });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getContact: async (req, res) => {
+    try {
+      const posts = await Post.find({ user: req.user.id });
+      const users = await User.find({});
+      res.render("contact.ejs", { posts: posts, user: req.user, users: users });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
@@ -46,7 +73,7 @@ module.exports = {
     try {
       const post = await Post.findById(req.params.id);
       const comments = await Comment.find({ post: req.params.id });
-      res.render("post.ejs", { post: post, user: req.user, comment: comments });
+      res.render("post.ejs", { post: post, user: req.user, comment: comments});
     } catch (err) {
       console.log(err);
     }
@@ -56,7 +83,6 @@ module.exports = {
     try {
       
       let team =  await Team.findOne({ user: req.user.id })
-console.log("team", team, req.user.id, req.user._id)
       if(!team){
         team = {members: []}
       }
@@ -81,7 +107,7 @@ console.log("team", team, req.user.id, req.user._id)
         { upsert: true })
       
       
-        
+
       res.redirect("/team")
     } catch (err) {
       console.log(err);
@@ -135,6 +161,19 @@ console.log("team", team, req.user.id, req.user._id)
     }
   },
 
+  // changePost: async (req, res) => {
+  //   try {
+  //     await Post.findOneAndUpdate(
+  //       { _id: req.params.id },
+  //      req.body
+  //     );
+  //     console.log(req.body);
+  //     res.redirect(`/post/${req.params.id}`);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
+
   likePost: async (req, res) => {
     try {
       await Post.findOneAndUpdate(
@@ -152,32 +191,16 @@ console.log("team", team, req.user.id, req.user._id)
   deletePost: async (req, res) => {
     try {
       // Find post by id
-      let post = await Post.findById({ _id: req.params.id });
+      let post = await Post.findById(req.params.id);
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(post.cloudinaryId);
       // Delete post from db
-      await Post.remove({ _id: req.params.id });
+      await Post.findByIdAndRemove(req.params.id);
       console.log(req.params.id);
       res.redirect("/profile");
     } catch (err) {
+      console.log(err);
       res.redirect("/profile");
     }
   },
-};
-
-// Upload image to Cloudinary
-// if (req.file) {
-// {
-//     resource_type: "auto",
-//   });
-//   imageUrl = imageResult.secure_url;
-// }
-
-// Upload audio to Cloudinary
-// if (req.file && req.file.fieldname == 'audio') {
-//   const audioResult = await cloudinary.uploader.upload(req.file.path, {
-//     resource_type: "video",
-//     format: "mp3",
-//   });
-// audioUrl = audioResult.secure_url;
-// }
+}
