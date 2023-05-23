@@ -721,6 +721,7 @@ a:hover {
 }
 
 
+
 /*  */
 
 
@@ -1059,6 +1060,7 @@ span {
 
 /* HOME PAGE */
 .homeContainer {
+  margin: 0 auto ;
   margin-bottom: 200px;
 }
 
