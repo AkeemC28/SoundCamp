@@ -1,78 +1,110 @@
 <%- include('partials/header') -%>
 
-    <div class="site-blocks-cover inner-page-cover bg-light mb-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-12 text-center">
-            <a href="#"></a><span class="mx-2">&bullet;</span> <span class="mx-2">&bullet;</span>
-            <h1 class="mb-3">Music Project</h1>
-          </div>
+  <div class="site-blocks-cover inner-page-cover bg-light mb-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 text-center">
+          <a href="#"></a><span class="mx-2">&bullet;</span> <span class="mx-2">&bullet;</span>
+          <h1 class="mb-3">Music Project</h1>
         </div>
       </div>
     </div>
+  </div>
 
-   
 
-    <!-- Collaborators -->
 
-<select class="select-box" name="editPost" id="editPostDropDown">
-  <option class="status" value="To Do">To Do</option>
-  <option class="status" value="In Progress">In Progress</option>
-  <option class="status" value="Completed">Completed</option>
-</select>
+  <!-- Collaborators -->
+<form action="/post/updateStatus/<%= post.id %>?_method=PUT" method="POST">
+  <select class="select-box" name="status" id="editPostDropDown">
+      
+    <option <%= post.status === "To Do" ? "selected" : '' %> class="status" value="To Do">To Do</option>
+    <option <%= post.status === "In Progress" ? "selected" : '' %> class="status" value="In Progress">In Progress</option>
+    <option <%= post.status === "Completed" ? "selected" : '' %> class="status" value="Completed">Completed</option>
+  </select> 
+  <button type="submit">Update Status</button>
+</form>
 
-<!-- Original -->
+  <!-- Original -->
   <div class="container">
     <div class="row justify-content-center mt-5">
-      
+
       <div class="col-6 projectSpace">
-        <h3 class="titlePos">
-         <span>Project Title: <%= post.title %></span>
-        </h3>
-        <!-- <h2>
-          <%= post.status %>
-        </h2> -->
-        <img class="img-fluid" src="<%= post.image%>" />
-        <!-- Audio -->
-        <% if (post.audio) { %>
-          <audio controls id="player2" preload="none" controls style="max-width: 100%">
+
+       
+
+
+        <div class="card2">
+          <h3 class="titlePos">
+            <span class="addWhite">Project Title: <%= post.title %></span>
+          </h3>
+          <img class="img-fluid cardImage" src="<%= post.image%>" />
+          <!-- <p>A glass-like card to demonstrate the <strong>Glassmorphism UI design</strong> trend.</p> -->
+          <!-- <p class="card-footer2">Created by Rahul C.</p> -->
+          <% if (post.audio) { %>
+            <audio class="audioPlayer" controls id="player2" preload="none" controls style="max-width: 100%">
+              <source src="<%= post.audio %>" type="audio/mp3">
+            </audio>
+            <% } %>
+              <div class="updates">
+                <form class="likeBox" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
+                  <button class="btn btn-primary fa fa-heart heartButt" type="submit"></button>
+
+                </form>
+
+                <h4 class="likes"><span class="addWhite" >Likes: <%= post.likes %></span></h4>
+
+                <%if(post.user==user.id){ %>
+                  <form action="/post/deletePost/<%= post._id %>?_method=DELETE" method="POST" class="col-3">
+                    <button class="btn btn-primary fa fa-trash trashButt" type="submit"><i
+                        class="ph ph-trash"></i></button>
+                  </form>
+                  <% } %>
+              </div>
+
+              <!-- Audio -->
+              <!-- <% if (post.audio) { %>
+          <audio class="audioPlayer" controls id="player2" preload="none" controls style="max-width: 100%">
             <source src="<%= post.audio %>" type="audio/mp3">
           </audio>
-          <% } %>
-        <!-- <h4 class="captionPos">
+          <% } %> -->
+              <!-- <h4 class="captionPos">
           <span >
            Caption: <%= post.caption %>
           </span>
         </h4> -->
-        
-      </div>
-      
-      <div class="row justify-content-between likeDelete">
-          
-        <form class="col-1 likeBox" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
-          <button class="btn btn-primary fa fa-heart heartButt" type="submit"></button>
-          
-        </form>
 
-        <h4 class="col-3 likes"><span>Likes: <%= post.likes %></span></h4>
-        
-        <%if(post.user==user.id){ %>
-          <form action="/post/deletePost/<%= post._id %>?_method=DELETE" method="POST" class="col-3">
-            <button class="btn btn-primary fa fa-trash trashButt" type="submit"><i class="ph ph-trash"></i></button>
-          </form>
-        <% } %>
+              <!-- <div class="updates">
+              <form class="col-1 likeBox" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
+                <button class="btn btn-primary fa fa-heart heartButt" type="submit"></button>
 
-            
-      </div>
+              </form>
 
-       <!-- Collaborators -->
+              <h4 class="col-3 likes"><span>Likes: <%= post.likes %></span></h4>
 
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-lg-3 ml-auto collabBox">
-          <div class="featured-user  mb-5 mb-lg-0">
-            <h3 class="mb-4">Collaborators</h3>
-            <!-- <ul class="list-unstyled">
+              <%if(post.user==user.id){ %>
+                <form action="/post/deletePost/<%= post._id %>?_method=DELETE" method="POST" class="col-3">
+                  <button class="btn btn-primary fa fa-trash trashButt" type="submit"><i
+                      class="ph ph-trash"></i></button>
+                </form>
+                <% } %>
+            </div> -->
+        </div>
+
+        <div class="row justify-content-between likeDelete">
+
+
+
+
+        </div>
+
+        <!-- Collaborators -->
+
+        <!-- <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-lg-3 ml-auto collabBox">
+              <div class="featured-user  mb-5 mb-lg-0">
+                <h3 class="mb-4">Collaborators</h3> -->
+        <!-- <ul class="list-unstyled">
               <li>
                 <span href="#" class="d-flex align-items-center">
                   
@@ -103,7 +135,7 @@
               <li>
                 <span href="#" class="d-flex align-items-center">
                   <!-- <img src="" alt="Image" class="img-fluid mr-2"> -->
-                  <!-- <div class="podcaster">
+        <!-- <div class="podcaster">
                     <span class="d-block">Garry Smith</span>
                     <span class="small"></span>
                   </div>
@@ -111,8 +143,8 @@
               </li>
               <li>
                 <span href="#" class="d-flex align-items-center"> -->
-                  <!-- <img src="" alt="Image" class="img-fluid mr-2"> -->
-                  <!-- <div class="podcaster">
+        <!-- <img src="" alt="Image" class="img-fluid mr-2"> -->
+        <!-- <div class="podcaster">
                     <span class="d-block">Gerson Stack</span>
                     <span class="small"></span>
                   </div>
@@ -120,51 +152,54 @@
               </li>
               <li>
                 <span href="#" class="d-flex align-items-center"> -->
-                  <!-- <img src="" alt="Image" class="img-fluid mr-2"> -->
-                  <!-- <div class="podcaster">
+        <!-- <img src="" alt="Image" class="img-fluid mr-2"> -->
+        <!-- <div class="podcaster">
                     <span class="d-block">Jenna Stone</span>
                     <span class="small"></span>
                   </div> -->
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-7 pb-5 mr-auto makeComment">
-          
+        <!-- </span>
+                </li>
+                </ul>
+              </div>
+            </div> -->
+        <div class="col-md-7 pb-5 mr-auto makeComment commentSpace">
+
           <!-- <p><strong class="font-weight-bold font-weight-bold"><%= user.userName %></strong>: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde labore fugit earum beatae, qui autem asperiores harum quibusdam nulla in suscipit iure consequatur, laborum, inventore libero odit rem, dolore. Itaque?</p>
           <p><strong class="font-weight-bold font-weight-bold">John:</strong> Ea ipsum, libero exercitationem, quisquam magnam blanditiis facere sapiente sequi esse totam quaerat obcaecati ab ratione ex dignissimos quae ullam dolore veniam minima! Et accusamus distinctio ipsa. Hic, repellat blanditiis!</p> -->
           <!-- Comments -->
+          <section class="">
+            <div class="col-6">
+              <h3 class="commentline">Comments</h3>
+              <ul class="row list-unstyled commentBox">
+                <% for(var i=0; i<comment.length; i++) {%>
+                  <li class="col-6 justify-content-between mt-5 commentLi">
+                    <p><strong class="font-weight-bold font-weight-bold">
+                        <%= user.userName %>
+                      </strong>: <%= comment[i].comment %>
+                    </p>
+                  </li>
+                  <% } %>
+              </ul>
+            </div>
 
-          <div class="col-6">
-            <h3>Comments</h3>
-            <ul class="row list-unstyled commentBox">
-              <% for(var i=0; i<comment.length; i++) {%>
-                <li class="col-6 justify-content-between mt-5 commentLi">
-                  <p><strong class="font-weight-bold font-weight-bold"><%= user.userName %></strong>: <%= comment[i].comment %></p>
-                </li>
-              <% } %>
-            </ul>
-          </div>
-
-            <form action="/post/createComment/<%= post._id %>" method="POST" >
+            <form class="comment" action="/post/createComment/<%= post._id %>" method="POST">
               <div class="form-group ">
                 <label for="comment">Leave a comment:</label>
                 <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
               </div>
               <button type="submit" class="btn btn-primary postButton">Submit</button>
             </form>
+          </section>
 
-            
 
-            <!-- Comments -->
+          <!-- Comments -->
         </div>
       </div>
     </div>
-      
-    </div>
+
   </div>
-   
+  </div>
+
   <div class="col-6 mt-5 bottomButtons">
     <a class="btn btn-primary postButton" href="/profile">Return to Profile</a>
     <a class="btn btn-primary postButton" href="/feed">Return to Feed</a>

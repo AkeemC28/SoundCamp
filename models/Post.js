@@ -38,8 +38,7 @@ const PostSchema = new mongoose.Schema({
     ref: "User",
   },
   userName: { 
-    type: String, 
-    unique: true 
+    type: String,
   },
   createdAt: {
     type: Date,
@@ -47,7 +46,7 @@ const PostSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    default: "todo",
+    default: "",
   },
 });
 

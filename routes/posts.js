@@ -15,10 +15,11 @@ router.post("/createPost", upload.fields([{name:'image'},{name:'audio'}]), posts
 
 router.post("/createComment/:id", postsController.createComment);
 
-// router.put("/changePost/:id", postsController.changePost);
+router.post("/createTeamPost/:teamId", upload.fields([{name:'image'},{name:'audio'}]),postsController.createTeamPost);
 
 router.put("/likePost/:id", postsController.likePost);
+router.put("/updateStatus/:id", postsController.updateStatus);
 
-router.delete("/deletePost/:id", postsController.deletePost);     
+router.delete("/deletePost/:id", postsController.deletePost); 
 
 module.exports = router;

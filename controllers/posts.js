@@ -3,6 +3,8 @@ const Comment = require("../models/Comment");
 const Post = require("../models/Post");
 const User = require("../models/User");
 const Team = require('../models/Team');
+const TeamPost = require('../models/TeamPost');
+const { ObjectID } = require('mongodb');
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -70,8 +72,10 @@ module.exports = {
   },
 
   getPost: async (req, res) => {
+    console.log(req.params, "GET POST")
     try {
       const post = await Post.findById(req.params.id);
+      console.log("GET POST", post)
       const comments = await Comment.find({ post: req.params.id });
       res.render("post.ejs", { post: post, user: req.user, comment: comments});
     } catch (err) {
@@ -83,6 +87,7 @@ module.exports = {
     try {
       
       let team =  await Team.findOne({ user: req.user.id })
+      const teamPosts = await TeamPost.find({ team: team.id });
       if(!team){
         team = {members: []}
       }
@@ -92,7 +97,7 @@ module.exports = {
         members.push(member)
       }
       console.log("members",members)
-      res.render("team.ejs", { members: members, user: req.user});
+      res.render("team.ejs", { members: members, user: req.user, posts: teamPosts, team: team});
     } catch (err) {
       console.log(err);
     }
@@ -141,10 +146,51 @@ module.exports = {
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
+        userName: req.user.userName
       });
 
       console.log("Post has been added!");
       res.redirect("/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  createTeamPost: async (req, res) => {
+    try {
+
+      console.log("req.params.team",req.params.team)
+      let imageResult;
+
+      const { image, audio } = req.files;
+      if (image) {
+        imageResult = await cloudinary.uploader.upload(image[0].path);
+      }
+      console.log(imageResult)
+      const audioResult = await cloudinary.uploader.upload(audio[0].path, {
+        resource_type: "video",
+      });
+
+      if (!Array.isArray(req.body.genre)) {
+        req.body.genre = [req.body.genre];
+      }
+      // Create post with the appropriate URLs
+      await TeamPost.create({
+        title: req.body.title,
+        image: imageResult?.secure_url,
+        audio: audioResult.secure_url,
+        imageId: imageResult?.public_id,
+        audioId: audioResult.public_id,
+        genre: req.body.genre,
+        caption: req.body.caption,
+        likes: 0,
+        user: req.user.id,
+        team: req.params.teamId,
+        userName: req.user.userName
+      });
+      
+      console.log(" Team Post has been added!");
+      res.redirect("/team");
     } catch (err) {
       console.log(err);
     }
@@ -191,6 +237,50 @@ module.exports = {
       console.log(err);
     }
   },
+
+  updateStatus: async (req, res) => {
+    console.log(req.body)
+    try {
+      await Post.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          status: req.body.status,
+        }
+      );
+      console.log("Status changed!");
+      console.log("STATUS",req.body.status)
+      res.redirect(`/post/${req.params.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  removeFromTeam: async (req, res) => {
+    const idToRemove = req.params.id;
+
+// Create a new MongoDB ObjectID from the idToRemove
+const memberId = idToRemove
+console.log(req.params.id)
+// Define the update operation
+const updateOperation = {
+  $pull: {
+    members: memberId,
+  },
+};
+
+// Update the document in the 'team' collection
+const result = await Team.updateOne({user: req.user.id}, updateOperation);
+console.log(result)
+res.redirect("/team");
+// Check the result
+if (result.modifiedCount > 0) {
+  console.log('Member removed successfully.');
+} else {
+  console.log('Member not found or removal operation failed.');
+}
+},
+
+
   deletePost: async (req, res) => {
     try {
       // Find post by id
@@ -202,7 +292,7 @@ module.exports = {
       }
       
       await cloudinary.uploader.destroy(post.audioId);
-      
+
       const result = await Post.findByIdAndRemove(req.params.id);
       // console.log(result)
       console.log(req.params.id);
@@ -213,3 +303,5 @@ module.exports = {
     }
   },
 }
+
+

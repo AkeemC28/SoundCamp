@@ -10,6 +10,9 @@ const TeamSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  role: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Team", TeamSchema);

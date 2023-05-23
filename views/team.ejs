@@ -1,23 +1,114 @@
 <%- include('partials/header') -%>
 
-<body class="teamBody">
-    
+    <body class="teamBody">
 
-<h1>Team</h1>
-<h3>Build your team and expand your community.</h3>
-    <div class="row justify-content-center mt-5">
-        <ul class="row list-unstyled">
-            <% for(var i=0; i<members.length; i++) {%>
-                <li>
-                    <h4>Name: <%= members[i].userName %></h4>
-                    <h4>Role: <%= members[i].role %></h4>
-                        <form action="/removeFromTeam?_method=PUT" method="POST">
-                            <input name="member" value="<%= members[i].id %>" type="hidden">
-                            <button class="removeTeamButton" type="submit" id="">Remove From Team</button>
-                        </form>
-                </li>
-                <% } %>
-        </ul>
-    </div>
-</body>
+
+        <h1>Teams</h1>
+        <h3>Build your team and expand your community!</h3>
+
+        <div class="mt-5">
+            <h2>Add A Project</h2>
+            <form action="/post/createTeamPost/<%= team.id %>" enctype="multipart/form-data" method="POST">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title">
+                </div>
+                <div class="mb-3">
+                    <label for="caption" class="form-label">Description: </label>
+                    <textarea class="form-control" id="caption" name="caption"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <h3><label for="image">Image File:</label></h3>
+                    <input class="profInputs" type="file" id="image" name="image">
+                </div>
+                <div class="mb-3">
+                    <h3><label for="audio">Audio File:</label></h3>
+                    <input class="profInputs" type="file" id="audio" name="audio" accept="audio/*">
+                </div>
+                <h3>Choose Your Genre:</h3>
+                <select name="genre" class="select-box">
+                    <option value="">Select a genre</option>
+                    <option value="pop">Pop</option>
+                    <option value="rock">Rock</option>
+                    <option value="hip-hop">Hip Hop</option>
+                    <option value="r&b">R&B</option>
+                    <option value="electronic">Electronic</option>
+                    <option value="country">Country</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="reggae">Reggae</option>
+                    <option value="latin">Latin</option>
+                    <option value="indie">Indie</option>
+                </select>
+                <select name="genre" class="select-box">
+                    <option value="">Select a genre</option>
+                    <option value="pop">Pop</option>
+                    <option value="rock">Rock</option>
+                    <option value="hip-hop">Hip Hop</option>
+                    <option value="r&b">R&B</option>
+                    <option value="electronic">Electronic</option>
+                    <option value="country">Country</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="reggae">Reggae</option>
+                    <option value="latin">Latin</option>
+                    <option value="indie">Indie</option>
+                </select>
+                <button type="submit" class="btn btn-primary genreButton" value="Upload">Submit</button>
+            </form>
+        </div>
+        </div>
+
+        <div class="col-6">
+            <h3>Submissions: </h3>
+            <ul class="row list-unstyled">
+                <% for(var i=0; i<posts.length; i++) { %>
+                    <li class="col-6 justify-content-between mt-5">
+                        <!-- <a href="/post/<%= posts[i]._id %>"> -->
+                            <% if (posts[i].image) { %>
+                                <img class="img-fluid" src="<%= posts[i].image %>">
+                                <% } %>
+                                    <% if (posts[i].audio) { %>
+                                        <audio controls>
+                                            <source src="<%= posts[i].audio %>" type="audio/mp3">
+                                        </audio>
+                                        <!-- <% } else { %> -->
+
+                                        <% } %>
+
+                                            <!-- Collabs -->
+                                            <select name="collaborator" id="" class="select-box">
+                                                <option value="">Select Collaborators</option>
+                                                <% for(var j=0; j < members.length; j++) {%>
+                                                  
+                                                    <option value="<%= members[j].id %>">
+                                                        <%= members[j].userName %>
+                                                    </option>
+                                                    <% } %>
+                                            </select>
+                        <!-- </a> -->
+                    </li>
+                    <% } %>
+
+
+
+
+
+                        <div class="row justify-content-center mt-5">
+                            <ul class="row list-unstyled">
+                                <% for(var i=0; i<members.length; i++) {%>
+                                    <li>
+                                        <h4>Name: <%= members[i].userName %>
+                                        </h4>
+                                        <h4>Role: <%= members[i].role %>
+                                        </h4>
+                                        <form action="/removeFromTeam/<%= members[i].id %>?_method=PUT" method="POST">
+                                            <input name="member" value="<%= members[i].id %>" type="hidden">
+                                            <button class="removeTeamButton" type="submit" id="">Remove From
+                                                Team</button>
+                                        </form>
+                                    </li>
+                                    <% } %>
+                            </ul>
+                        </div>
+    </body>
     <%- include('partials/footer') -%>

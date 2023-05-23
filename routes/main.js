@@ -15,6 +15,7 @@ router.get("/feed", ensureAuth, postsController.getFeed);
 router.get("/login", authController.getLogin);
 router.get("/team", postsController.getTeam);
 router.put("/addToTeam", postsController.addToTeam);
+router.put("/removeFromTeam/:id", postsController.removeFromTeam); 
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
