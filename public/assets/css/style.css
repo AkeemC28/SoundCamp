@@ -98,6 +98,10 @@ a:hover {
   font-weight: 300;
   letter-spacing: 0.2em;
 }
+.btn-primary:hover{
+  background: rgb(141,165,218);
+  border: rgb(131,155,208);
+}
 
 .btn:hover {
   -webkit-box-shadow: 0 5px 20px -7px rgba(0, 0, 0, 0.9) !important;
@@ -189,7 +193,7 @@ a:hover {
 .site-footer h3,
 .site-footer h4,
 .site-footer h5 {
-  color: #fff;
+  color: black;
 }
 
 .site-footer h3 {
@@ -633,7 +637,7 @@ a:hover {
 
 .commentLi {
   height: 0px;
-  background-color: #f23a2e;
+  background-color: rgb(141,165,218);
   height: 50px;
   border-radius: 50px;
   color: rgb(251, 251, 251);
@@ -651,9 +655,7 @@ a:hover {
   text-align: center;
 }
 
-.addWhite{
-  color: rgb(251, 251, 251);
-}
+
 .captionPos {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -663,9 +665,7 @@ a:hover {
   border-radius: 100px;
 
 }
-.commentline{
-  color: rgb(251, 251, 251);
-}
+
 
 
 /*  */
@@ -678,23 +678,27 @@ a:hover {
   justify-content: space-between;
 
   max-width: 500px;
-  height: 400px;
+  height: 500px;
 
-  border: 1px solid rgba(255, 255, 255, .25);
+  border: 1px solid rgb(199, 178, 155);
   border-radius: 20px;
-  background-color: rgb(51, 51, 51);
+  background-color: rgb(209, 188, 165);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 
   backdrop-filter: blur(15px);
   margin: 0 auto;
-  color: rgb(251, 251, 251);
+  color: black;
   text-align: center;
 }
 .feedContainer{
   display: flex;
   justify-content: center;
 }
-
+.submitStatus{
+  border-radius: 100px;
+  border: 5px solid rgb(131, 155, 208);
+  background-color: rgb(141, 165, 218);
+}
 .card3 {
   max-width: 300px;
   min-height: 200px;
@@ -706,17 +710,18 @@ a:hover {
   /* height: 600px; */
   padding: 35px;
 
-  border: 1px solid rgba(255, 255, 255, .25);
+  border: 1px solid rgb(199, 178, 155);
   border-radius: 20px;
-  background-color: rgb(51, 51, 51);
+  background: rgb(209, 188, 165);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 
   backdrop-filter: blur(15px);
   margin: 0 auto;
-  color: rgb(251, 251, 251);
+  color: black;
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
+  list-style: none;
 }
 
 .card-footer2 {
@@ -731,21 +736,28 @@ a:hover {
 
 .postButton {
   border-radius: 100px;
-  border: 5px solid rgb(251, 251, 251);
+  border: 5px solid rgb(131, 155, 208);
   text-align: center;
-  background-color: rgb(51, 51, 51);
+  background-color: rgb(141, 165, 218);
   width: 20%;
   color: rgb(251, 251, 251)
 }
+.status{
+  display: flex;
+  justify-content: center;
+    
+}
+
 
 .makeComment {
-  background-color: rgb(51, 51, 51);
+  background-color: rgb(209, 188, 165);
   border-radius: 40px;
-  border: 5px solid #3b3730;
+  border: 5px solid rgb(199, 178, 155);
   text-align: center;
-  color: rgb(251, 251, 251);
+  color: black;
   margin: 0 235px;
 }
+
 
 .collabBox {
   background-color: #9d9480;
@@ -777,18 +789,18 @@ a:hover {
 }
 
 .heartButt {
-  background-color: rgb(251, 251, 251);
-  border: 5px solid rgb(51, 51, 51);
-  width: 225%;
+  background-color: rgb(141, 165, 218);
+  border: 5px solid rgb(131, 155, 208);
+  width: 280%;
   border-radius: 50px;
   height: 70px;
-  color: rgb(51, 51, 51);
+  color: black
 }
 
 .updates {
   display: flex;
-  justify-content: space-around;
-
+  justify-content: space-evenly;
+  margin-right: 30px;
 }
 
 .likeBox {
@@ -797,7 +809,7 @@ a:hover {
 
 .likes {
   margin-top: 25px;
-  margin-left: 60px;
+  margin-left: 100px;
 }
 
 .cardImage {
@@ -807,14 +819,14 @@ a:hover {
 }
 
 .trashButt {
-  background-color: rgb(251, 251, 251);
-  border: 5px solid rgb(51, 51, 51);
-  width: 150%;
+  background-color: rgb(141, 165, 218);
+  border: 5px solid rgb(131, 155, 208);
+  width: 158%;
   padding-right: 20px;
   border-radius: 50px;
   height: 50px;
   padding-bottom: 37px;
-  color: rgb(51, 51, 51)
+  color: black
 }
 
 .period {
@@ -864,6 +876,7 @@ span {
 
 .audioPlayer {
   margin: 0 auto;
+  margin-top: 50px;
 }
 
 .card {
@@ -985,9 +998,9 @@ span {
 .profReturnToFeed {
   margin-bottom: 100px;
   border-radius: 100px;
-  border: 5px solid #3b3730;
+  border: 5px solid rgb(131, 155, 208);
   text-align: center;
-  background-color: #9d9480;
+  background-color: rgb(141,165,218);
 }
 
 .profContainer {
@@ -1000,28 +1013,29 @@ span {
 
 .genreButton {
   border-radius: 100px;
-  border: 5px solid #3b3730;
+  border: 5px solid rgb(131, 155, 208);
   text-align: center;
-  background-color: #9d9480;
+  background-color: rgb(141,165,218);
   margin-bottom: 50px;
   margin-top: 50px;
   width: 20%;
+  color: #000;
 }
 
 .profInputs {
-  border-radius: 100px;
-  border: 5px solid #3b3730;
+  border-radius: 10px;
+  border: 5px solid rgb(131, 155, 208);
   text-align: center;
-  background-color: #9d9480;
+  background-color: rgb(141,165,218);
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
 .profLogOut {
   border-radius: 100px;
-  border: 5px solid #3b3730;
+  border: 5px solid rgb(131, 155, 208);
   text-align: center;
-  background-color: #9d9480;
+  background-color: rgb(141,165,218);
 }
 
 .select-box {
@@ -1032,6 +1046,7 @@ span {
   font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;
   font-size: 18px;
   color: #60666d;
+  border-radius: 10px;
 
   @media (min-width: 768px) {
     width: 70%;
@@ -1165,25 +1180,25 @@ background: rgb(209, 188, 165);
   width: 15%;
   margin: 0 20px;
   border-radius: 100px;
-  border: 5px solid #3b3730;
+  border: 5px solid rgb(131,155,208);
   text-align: center;
-  background-color: #9d9480;
+  background-color: rgb(141,165,218);
 }
 
 .clearSearchButton {
   width: 15%;
   margin: 0 20px;
   border-radius: 100px;
-  border: 5px solid #3b3730;
+  border: 5px solid rgb(131,155,208);
   text-align: center;
-  background-color: #9d9480;
+  background-color: rgb(141,165,218);
 }
 
 .addToTeamButton {
   border-radius: 100px;
-  border: 5px solid #3b3730;
+  border: 5px solid rgb(131,155,208);
   text-align: center;
-  background-color: #9d9480;
+  background-color: rgb(141,165,218);
 }
 
 .feedBox {
@@ -1891,7 +1906,9 @@ background: rgb(209, 188, 165);
   -o-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;
 }
-
+.postSelect{
+  width: 100%;
+}
 .block-25 ul li a .text .heading {
   font-size: 18px;
   line-height: 1.5;
@@ -2038,6 +2055,9 @@ background: rgb(209, 188, 165);
 
 .play-wrap {
   margin-top: -70px;
+}
+html{
+  color: #000;
 }
 
 @media (max-width: 991.98px) {

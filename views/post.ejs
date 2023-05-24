@@ -14,14 +14,15 @@
 
 
   <!-- Collaborators -->
-<form action="/post/updateStatus/<%= post.id %>?_method=PUT" method="POST">
-  <select class="select-box" name="status" id="editPostDropDown">
-      
+<form class="status" action="/post/updateStatus/<%= post.id %>?_method=PUT" method="POST">
+  <section>
+  <select class="select-box postSelect" name="status" id="editPostDropDown">
     <option <%= post.status === "To Do" ? "selected" : '' %> class="status" value="To Do">To Do</option>
     <option <%= post.status === "In Progress" ? "selected" : '' %> class="status" value="In Progress">In Progress</option>
     <option <%= post.status === "Completed" ? "selected" : '' %> class="status" value="Completed">Completed</option>
   </select> 
-  <button type="submit">Update Status</button>
+  <button class="submitStatus" type="submit">Update Status</button>
+</section>
 </form>
 
   <!-- Original -->
@@ -47,7 +48,7 @@
             <% } %>
               <div class="updates">
                 <form class="likeBox" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
-                  <button class="btn btn-primary fa fa-heart heartButt" type="submit"></button>
+                  <button class="btn fa fa-heart heartButt" type="submit"></button>
 
                 </form>
 
@@ -55,7 +56,7 @@
 
                 <%if(post.user==user.id){ %>
                   <form action="/post/deletePost/<%= post._id %>?_method=DELETE" method="POST" class="col-3">
-                    <button class="btn btn-primary fa fa-trash trashButt" type="submit"><i
+                    <button class="btn fa fa-trash trashButt" type="submit"><i
                         class="ph ph-trash"></i></button>
                   </form>
                   <% } %>

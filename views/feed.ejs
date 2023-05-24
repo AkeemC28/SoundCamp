@@ -17,15 +17,15 @@
       <ul class="">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="card3">
-          </p> <%= posts.userName %></h4>
+            <span><%= posts[i].userName %></span>
             <h4>Title: <%= posts[i].title %>
             </h4>
             <a href="/post/<%= posts[i]._id%>">
               <img class="img-fluid cardImage" src="<%= posts[i].image%>">
             </a>
-            <% if (posts.audio) { %>
+            <% if (posts[i].audio) { %>
               <audio class="audioPlayer" controls id="player2" preload="none" controls style="max-width: 100%">
-                <source src="<%= posts.audio %>" type="audio/mp3">
+                <source src="<%= posts[i].audio %>" type="audio/mp3">
               </audio>
               <% } %>
                 <form class="feedFormMargin" action="/addToTeam?_method=PUT" method="POST">
