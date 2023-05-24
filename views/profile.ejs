@@ -13,10 +13,16 @@
                   <img src="/imgs/IMG_8714-2.JPG" alt="">
                 </div>
                 <div class="card-content d-flex flex-column align-items-center">
-                  <h4 class="pt-2"><p><strong>User Name</strong>:
-                    </p> <%= user.userName %></h4>
-                  <h5><p><strong>Role</strong>:
-                  </p><%= user.role %></h5>
+                  <h4 class="pt-2">
+                    <p><strong>User Name</strong>:
+                    </p>
+                    <%= user.userName %>
+                  </h4>
+                  <h5>
+                    <p><strong>Role</strong>:
+                    </p>
+                    <%= user.role %>
+                  </h5>
 
 
 
@@ -54,6 +60,10 @@
             <label for="caption" class="form-label">Description: </label>
             <textarea class="form-control" id="caption" name="caption"></textarea>
           </div>
+
+
+
+
 
           <div class="mb-3">
             <h3><label for="image">Image File:</label></h3>
@@ -97,33 +107,43 @@
 
     <div class="col-6">
       <h3>Submissions: </h3>
+
+
+
+      <!-- <p>A glass-like card to demonstrate the <strong>Glassmorphism UI design</strong> trend.</p>
+        <p class="card-footer">Created by Rahul C.</p> -->
+
+
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) { %>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id %>">
-              <% if (posts[i].image) { %>
-                <img class="img-fluid" src="<%= posts[i].image %>">
-                <% } %>
-                  <% if (posts[i].audio) { %>
-                    <audio controls>
-                      <source src="<%= posts[i].audio %>" type="audio/mp3">
-                    </audio>
-                    <!-- <% } else { %> -->
+        <div class="card2">
+          
+            <li class="col-6 justify-content-between mt-5">
+              <a href="/post/<%= posts[i]._id %>">
+                <% if (posts[i].image) { %>
+                  <img class="img-fluid" src="<%= posts[i].image %>">
+                  <% } %>
+                    <% if (posts[i].audio) { %>
+                      <audio controls>
+                        <source src="<%= posts[i].audio %>" type="audio/mp3">
+                      </audio>
+                      <!-- <% } else { %> -->
 
-                    <% } %>
+                      <% } %>
 
-                      <!-- Collabs -->
-                      <select name="collaborator" id="" class="select-box">
+                        <!-- Collabs -->
+                        <!-- <select name="collaborator" id="" class="select-box">
                         <% for(var j=0; j < users.length; j++) {%>
                           <option value="">Select Collaborators</option>
                           <option value="<%= users[j].id %>">
                             <%= users[j].userName %>
                           </option>
                           <% } %>
-                      </select>
-            </a>
-          </li>
-          <% } %>
+                      </select> -->
+              </a>
+            </li>
+        </div>
+        <% } %>
       </ul>
       <div class="row justify-content-center mt-5">
         <a class="btn btn-primary profReturnToFeed" href="/feed">Feed</a>

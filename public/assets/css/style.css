@@ -20,10 +20,11 @@ a {
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
+  color: black!important
 }
 
 a:hover {
-  text-decoration: none;
+  text-decoration: none!important;
 }
 
 .text-black {
@@ -678,7 +679,6 @@ a:hover {
 
   max-width: 500px;
   height: 400px;
-  padding: 35px;
 
   border: 1px solid rgba(255, 255, 255, .25);
   border-radius: 20px;
@@ -690,16 +690,20 @@ a:hover {
   color: rgb(251, 251, 251);
   text-align: center;
 }
+.feedContainer{
+  display: flex;
+  justify-content: center;
+}
 
 .card3 {
   max-width: 300px;
   min-height: 200px;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: space-between;
 
   max-width: 600px;
-  height: 600px;
+  /* height: 600px; */
   padding: 35px;
 
   border: 1px solid rgba(255, 255, 255, .25);
@@ -797,7 +801,7 @@ a:hover {
 }
 
 .cardImage {
-  width: 50%;
+  /* width: 50%; */
   height: 20vh;
   margin: 0 auto;
 }
@@ -813,9 +817,9 @@ a:hover {
   color: rgb(51, 51, 51)
 }
 
-/* .period {
-  color: #9d9480 !important;
-} */
+.period {
+  color: rgb(236, 131, 118) !important;
+}
 
 html {
   color: #000;
@@ -836,11 +840,11 @@ span {
 }
 
 .indexLogin {
-  background-color: #9d9480;
+  background-color: rgb(236, 131, 118);
 }
 
 .indexSignUp {
-  background-color: #9d9480;
+  background-color: rgb(236, 131, 118);
 }
 
 /* .bottomButtons{
@@ -1085,6 +1089,9 @@ span {
 
 .aboutA {
   color: #9d9480;
+}
+.site-footer{
+background: rgb(209, 188, 165);
 }
 
 /* ABOUT */
