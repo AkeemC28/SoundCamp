@@ -3,7 +3,7 @@
     <body class="teamBody">
 
 
-        <h1>Teams</h1>
+        <h1>Team</h1>
         <h3>Build your team and expand your community!</h3>
 
         <div class="mt-5">
@@ -58,25 +58,27 @@
         </div>
         </div>
 
+
+
         <div class="col-6">
             <h3>Submissions: </h3>
             <ul class="row list-unstyled">
                 <% for(var i=0; i<posts.length; i++) { %>
-                    <li class="col-6 justify-content-between mt-5">
+                    <li class="card3">
                         <!-- <a href="/post/<%= posts[i]._id %>"> -->
-                            <% if (posts[i].image) { %>
-                                <img class="img-fluid" src="<%= posts[i].image %>">
-                                <% } %>
-                                    <% if (posts[i].audio) { %>
-                                        <audio controls>
-                                            <source src="<%= posts[i].audio %>" type="audio/mp3">
-                                        </audio>
-                                        <!-- <% } else { %> -->
+                        <% if (posts[i].image) { %>
+                            <img class="img-fluid" src="<%= posts[i].image %>">
+                            <% } %>
+                                <% if (posts[i].audio) { %>
+                                    <audio controls>
+                                        <source src="<%= posts[i].audio %>" type="audio/mp3">
+                                    </audio>
+                                    <!-- <% } else { %> -->
 
-                                        <% } %>
+                                    <% } %>
 
-                                            <!-- Collabs -->
-                                            <select name="collaborator" id="" class="select-box">
+                                        <!-- Collabs -->
+                                        <!-- <select name="collaborator" id="" class="select-box">
                                                 <option value="">Select Collaborators</option>
                                                 <% for(var j=0; j < members.length; j++) {%>
                                                   
@@ -84,31 +86,97 @@
                                                         <%= members[j].userName %>
                                                     </option>
                                                     <% } %>
-                                            </select>
-                        <!-- </a> -->
+                                            </select> -->
+                                        <!-- </a> -->
                     </li>
                     <% } %>
 
 
+                        <!-- <ul class="list-unstyled">
+              <li>
+                <span href="#" class="d-flex align-items-center">
+                  
+                  <div class="podcaster">
+                    <span class="d-block">Claire Stanford</span>
+                    <span class="small"></span>
+                  </div>
+                </span>
+              </li>
+              <li>
+                <span href="#" class="d-flex align-items-center">
+                  
+                  <div class="podcaster">
+                    <span class="d-block">Dianne Winston</span>
+                    <span class="small"></span>
+                  </div>
+                </span>
+              </li>
+              <li>
+                <span href="#" class="d-flex align-items-center">
+                  
+                  <div class="podcaster">
+                    <span class="d-block">Borris Larry</span>
+                    <span class="small"></span>
+                  </div>
+                </span>
+              </li>
+              <li>
+                <span href="#" class="d-flex align-items-center">
+                  <!-- <img src="" alt="Image" class="img-fluid mr-2"> -->
+                        <!-- <div class="podcaster">
+                    <span class="d-block">Garry Smith</span>
+                    <span class="small"></span>
+                  </div>
+                </span>
+              </li>
+              <li>
+                <span href="#" class="d-flex align-items-center"> -->
+                        <!-- <img src="" alt="Image" class="img-fluid mr-2"> -->
+                        <!-- <div class="podcaster">
+                    <span class="d-block">Gerson Stack</span>
+                    <span class="small"></span>
+                  </div>
+                </span>
+              </li>
+              <li>
+                <span href="#" class="d-flex align-items-center"> -->
+                        <!-- <img src="" alt="Image" class="img-fluid mr-2"> -->
+                        <!-- <div class="podcaster">
+                    <span class="d-block">Jenna Stone</span>
+                    <span class="small"></span>
+                  </div> -->
+                        <!--  </span> -->
+                        <!-- </li>
+                </ul> -->
 
 
 
-                        <div class="row justify-content-center mt-5">
-                            <ul class="row list-unstyled">
-                                <% for(var i=0; i<members.length; i++) {%>
-                                    <li>
-                                        <h4>Name: <%= members[i].userName %>
-                                        </h4>
-                                        <h4>Role: <%= members[i].role %>
-                                        </h4>
-                                        <form action="/removeFromTeam/<%= members[i].id %>?_method=PUT" method="POST">
-                                            <input name="member" value="<%= members[i].id %>" type="hidden">
-                                            <button class="removeTeamButton" type="submit" id="">Remove From
-                                                Team</button>
-                                        </form>
-                                    </li>
-                                    <% } %>
-                            </ul>
+
+                        <div class="row justify-content-between">
+                            <div class="col-lg-3 ml-auto collabBox">
+
+                                <h3 class="mb-4">Team Members</h3>
+                                <div class="row justify-content-center mt-5">
+                                    <ul class="row list-unstyled">
+                                        <% for(var i=0; i<members.length; i++) {%>
+                                            <li>
+                                                <h4>Name: <%= members[i].userName %>
+                                                </h4>
+                                                <h4>Role: <%= members[i].role %>
+                                                </h4>
+                                                <form action="/removeFromTeam/<%= members[i].id %>?_method=PUT"
+                                                    method="POST">
+                                                    <input name="member" value="<%= members[i].id %>" type="hidden">
+                                                    <button class="removeTeamButton" type="submit" id="">Remove
+                                                        From
+                                                        Team</button>
+                                                </form>
+                                            </li>
+                                            <% } %>
+                                    </ul>
+                                </div>
+                            </div>
+
                         </div>
     </body>
     <%- include('partials/footer') -%>

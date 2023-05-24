@@ -760,21 +760,22 @@ a:hover {
 
 
 .collabBox {
-  background-color: #9d9480;
+  background-color: rgb(209, 188, 165);
   border-radius: 40px;
-  border: 5px solid #3b3730;
+  border: 5px solid rgb(199, 178, 155);
   padding-top: 20px;
   text-align: center;
-  
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .mx-2 {
   display: none;
 }
 
-.ml-auto {
+/* .ml-auto {
   margin-left: 0px !important;
-}
+} */
 
 .mx-auto {
   margin-left: 0px !important;
@@ -856,7 +857,7 @@ span {
 }
 
 .indexSignUp {
-  background-color: rgb(236, 131, 118);
+  background-color: rgb(209, 188, 118);
 }
 
 /* .bottomButtons{
@@ -868,10 +869,12 @@ span {
 }
 
 .removeTeamButton {
-  background-color: #9d9480;
-  border: 5px solid #3b3730;
-  width: 25%;
-  border-radius: 50px;
+  background-color: rgb(141, 165, 218);
+    border: 5px solid rgb(131, 155, 208);
+    width: 90%;
+    border-radius: 50px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .audioPlayer {
